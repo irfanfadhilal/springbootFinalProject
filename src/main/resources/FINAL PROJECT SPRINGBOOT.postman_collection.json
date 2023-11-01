@@ -1,0 +1,1230 @@
+{
+	"info": {
+		"_postman_id": "c11f488e-7b0a-457e-bed9-89899598a634",
+		"name": "FINAL PROJECT SPRINGBOOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "3787580"
+	},
+	"item": [
+		{
+			"name": "final-project",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "signUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"tes@gmail.com\",\r\n    \"first_name\" : \"User\",\r\n    \"last_name\" : \"Testing\",\r\n    \"mobile_number\" : \"084188786656\",\r\n    \"password\" : \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/auth/signUp"
+							},
+							"response": []
+						},
+						{
+							"name": "signin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"admin@gmail.com\",\r\n    \"password\" : \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/auth/signIn"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "findAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/user/findAll"
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/user/findById?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"user",
+										"findById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\" : \"Irfan Fadhils\",\r\n    \"last_name\" : \"Al Muttaqien\",\r\n    \"mobile_number\" : \"085312121212\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/user/updateData?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"user",
+										"updateData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "agency",
+					"item": [
+						{
+							"name": "createData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgxMjg1NzcsImV4cCI6MTY5ODczMzM3N30.WlYffkMUpup8SYAeKdZm29Uq1Z4LErqlzAv9WFXFs-hhV0lATsNa7Sx00ftHa63w2CQTIgpOPRVV9IL-DR6q2g"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\" : \"003\",\r\n    \"details\" : \"Agensi Liburan Putu\",\r\n    \"name\" : \"Putu Transportation\",\r\n    \"owner\" : \r\n        {\r\n            \"id\" : 1\r\n        }\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/agency/createData"
+							},
+							"response": []
+						},
+						{
+							"name": "findAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/agency/findAll"
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/agency/findById?id=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"agency",
+										"findById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\" : \"001\",\r\n    \"details\" : \"Agensi Liburan Irfan\",\r\n    \"name\" : \"Irfan Transportation\",\r\n    \"owner\" : {\r\n        \"id\" : 1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/agency/updateData?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"agency",
+										"updateData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8070/agency/deleteData?id=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"agency",
+										"deleteData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "bus",
+					"item": [
+						{
+							"name": "createData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgxMjg1NzcsImV4cCI6MTY5ODczMzM3N30.WlYffkMUpup8SYAeKdZm29Uq1Z4LErqlzAv9WFXFs-hhV0lATsNa7Sx00ftHa63w2CQTIgpOPRVV9IL-DR6q2g"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"capacity\" : 120,\r\n    \"code\" : \"BUS_00004\",\r\n    \"make\" : \"Swasta\",\r\n    \"agency\" : \r\n        {\r\n            \"id\" : 2\r\n        }\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/bus/createData"
+							},
+							"response": []
+						},
+						{
+							"name": "findAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/bus/findAll"
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/bus/findById?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"bus",
+										"findById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"capacity\" : 70,\r\n    \"code\" : \"BUS_00001\",\r\n    \"make\" : \"Sekolah\",\r\n    \"agency\" : \r\n        {\r\n            \"id\" : 1\r\n        }\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/bus/updateData?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"bus",
+										"updateData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8070/bus/deleteData?id=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"bus",
+										"deleteData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "stop",
+					"item": [
+						{
+							"name": "createData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgxMjg1NzcsImV4cCI6MTY5ODczMzM3N30.WlYffkMUpup8SYAeKdZm29Uq1Z4LErqlzAv9WFXFs-hhV0lATsNa7Sx00ftHa63w2CQTIgpOPRVV9IL-DR6q2g"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\" : \"STOP_00011\",\r\n    \"name\" : \"Halte Rusak\",\r\n    \"detail\" : \"Pemberhentian Bus di Rusak\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/stop/createData"
+							},
+							"response": []
+						},
+						{
+							"name": "findAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/stop/findAll"
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/stop/findById?id=7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"stop",
+										"findById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\" : \"STOP_00001\",\r\n    \"name\" : \"Halte Marina\",\r\n    \"detail\" : \"Pemberhentian Bus di Marina\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/stop/updateData?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"stop",
+										"updateData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8070/stop/deleteData?id=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"stop",
+										"deleteData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "trip",
+					"item": [
+						{
+							"name": "createData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgxMjg1NzcsImV4cCI6MTY5ODczMzM3N30.WlYffkMUpup8SYAeKdZm29Uq1Z4LErqlzAv9WFXFs-hhV0lATsNa7Sx00ftHa63w2CQTIgpOPRVV9IL-DR6q2g"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fare\" : 50000,\r\n    \"journeyTime\" : \"10:00:00\",\r\n    \"sourceStop\" : {\r\n        \"id\" : 5\r\n    },\r\n    \"destStop\" : {\r\n        \"id\" : 7\r\n    },\r\n    \"bus\" : {\r\n        \"id\" : 2\r\n    },\r\n    \"agency\" : {\r\n        \"id\" : 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/trip/createData"
+							},
+							"response": []
+						},
+						{
+							"name": "findAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/trip/findAll"
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/trip/findById?id=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"trip",
+										"findById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findDataByTwoStops",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/trip/findDataByTwoStops?sourceStop=5&destStop=8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"trip",
+										"findDataByTwoStops"
+									],
+									"query": [
+										{
+											"key": "sourceStop",
+											"value": "5"
+										},
+										{
+											"key": "destStop",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fare\" : 70000,\r\n    \"journeyTime\" : \"09:00:00\",\r\n    \"sourceStop\" : {\r\n        \"id\" : 5\r\n    },\r\n    \"destStop\" : {\r\n        \"id\" : 8\r\n    },\r\n    \"bus\" : {\r\n        \"id\" : 2\r\n    },\r\n    \"agency\" : {\r\n        \"id\" : 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/trip/updateData?id=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"trip",
+										"updateData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8070/trip/deleteData?id=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"trip",
+										"deleteData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tripSchedule",
+					"item": [
+						{
+							"name": "createData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgxMjg1NzcsImV4cCI6MTY5ODczMzM3N30.WlYffkMUpup8SYAeKdZm29Uq1Z4LErqlzAv9WFXFs-hhV0lATsNa7Sx00ftHa63w2CQTIgpOPRVV9IL-DR6q2g"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tripDate\" : \"2023-01-12\",\r\n    \"availableSeats\" : 50,\r\n    \"tripDetail\" : {\r\n        \"id\" : 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/tripSchedule/createData"
+							},
+							"response": []
+						},
+						{
+							"name": "findAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/tripSchedule/findAll"
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/tripSchedule/findById?id=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"tripSchedule",
+										"findById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findDataByTripDate",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/tripSchedule/findDataByTripDate?tripDate=2023-01-12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"tripSchedule",
+										"findDataByTripDate"
+									],
+									"query": [
+										{
+											"key": "tripDate",
+											"value": "2023-01-12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tripDate\" : \"2023-02-12\",\r\n    \"availableSeats\" : 70,\r\n    \"tripDetail\" : {\r\n        \"id\" : 1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/tripSchedule/updateData?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"tripSchedule",
+										"updateData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8070/tripSchedule/deleteData?id=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"tripSchedule",
+										"deleteData"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ticket",
+					"item": [
+						{
+							"name": "createData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgxMjg1NzcsImV4cCI6MTY5ODczMzM3N30.WlYffkMUpup8SYAeKdZm29Uq1Z4LErqlzAv9WFXFs-hhV0lATsNa7Sx00ftHa63w2CQTIgpOPRVV9IL-DR6q2g"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"journeyDate\" : \"2023-01-12\",\r\n    \"seatNumber\" : 5,\r\n    \"cancelable\" : false,\r\n    \"tripSchedule\" : {\r\n        \"id\" : 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8070/ticket/createData"
+							},
+							"response": []
+						},
+						{
+							"name": "findAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/ticket/findAll"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "reservation",
+					"item": [
+						{
+							"name": "stops",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/reservation/stops"
+							},
+							"response": []
+						},
+						{
+							"name": "tripsByStops",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/reservation/tripsByStops?sourceStop=5&destStop=8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"reservation",
+										"tripsByStops"
+									],
+									"query": [
+										{
+											"key": "sourceStop",
+											"value": "5"
+										},
+										{
+											"key": "destStop",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "tripSchedules",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8070/reservation/tripSchedules"
+							},
+							"response": []
+						},
+						{
+							"name": "bookTicket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2OTgyMTc1MDQsImV4cCI6MTY5ODgyMjMwNH0.TG87x7hhdEEiUtMYc6DDAD4CFZQjI8RonxsuO0fSK1Zun6p2JIjV5Pw15WdUnT6Hz2MPcPutp6CRW57NqbukUA"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"passenger\" : {\r\n        \"id\" : 1\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8070/reservation/bookTicket?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8070",
+									"path": [
+										"reservation",
+										"bookTicket"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
